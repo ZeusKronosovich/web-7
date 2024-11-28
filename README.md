@@ -1,160 +1,70 @@
-# Основы Front-End разработки на JavaScript
+# Getting Started with Create React App
 
-Цель работы — изучение основ разработки SPA-приложение на JavaScript.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-В рамках данной лабораторной работы предлагается продолжить изучение JavaScript и познакомиться с фреймворком React, используемым для разработки фронтовой части веб-приложения.
+## Available Scripts
 
-# Подготовка к выполнению для этой и последующих лабораторных работ
+In the project directory, you can run:
 
-## Настройка окружения
+### `npm start`
 
-Для разработки JS приложений вам потребуется среда NodeJS. NodeJS это среда исполнения JS, которая позволяет
-писать и запускать JS-скрипты на сервере. Она нужна для разработки React-приложений.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Удобным инструментов контроля версий NodeJS является NVM (Node Versions Manager), который позволяет установить конкретную версию NodeJS,
-просмотреть список установленных, переключиться на другую версию NodeJS, удалить и так далее.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Гайд по установке NVM для Windows содержится в репозитории по ссылке: https://github.com/coreybutler/nvm-windows
-Гайд для установке NVM для Linux: https://dzen.ru/a/ZIgnHKuEFG5mTR0D (если не нравится, то можете найти любой другой)
+### `npm test`
 
-Чтобы убедиться, что nvm установлен, запустите терминал и вбейте команду
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```
-nvm
-```
+### `npm run build`
 
-Список доступных команд так же доступен по ссылке https://github.com/coreybutler/nvm-windows или можете посмотреть мануал с помощью команды
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```
-nvm -h
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Установка NodeJS с помощью nvm
+### `npm run eject`
 
-Следующая команда позволит установить актуальную вресию NodeJS:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```
-nvm install node
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Чтобы посмотреть список установленных версий NodeJS используйте команду:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```
-nvm list
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Чтобы использовать конкретную версию NodeJS используйте команду:
+## Learn More
 
-```
-nvm use <нужная версия>
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Про NPM и NPX
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Вместе с NodeJS поставляются два инструмента: NPM и NPX. NPM (менеджер пакетов) позволяе управлять зависимостями в проекте, а также запускать скрипты в package.json
-NPX позволяет запускать NPM-пакеты.
+### Code Splitting
 
-Подробнее про NPM и NPX: https://tproger.ru/articles/ponimanie-raznicy-mezhdu-npm-i-npx
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Гайд по созданию React-приложения
+### Analyzing the Bundle Size
 
-Ссылка: https://create-react-app.dev/docs/getting-started/
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## Приложение с семинара
+### Making a Progressive Web App
 
-В рамках семинара разработали Todo-приложение
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Установка зависимостей
+### Advanced Configuration
 
-Чтобы установить все необходимые для разработки приложения зависимости запустите команду:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-```
-npm install
-```
+### Deployment
 
-Она подтянет все зависимости, описанные в package.json и разместит их в директории node_modules. Здес содержатся все зависимости вашего преокта
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Чтобы установить конкретную зависимость и добавить о ней информацию в package.json используйте команду:
+### `npm run build` fails to minify
 
-```
-npm install <имя пакета>
-```
-
-### Запуск проекта
-
-Следующая комнда позволяет запустить приложение в dev-режиме:
-
-```
-npm run start
-```
-
-npm run позволяет запустить один из скриптов, описанных в объекте scripts файла package.json
-
-### Что рассмотрели в проекте
-
-#### Асинхронные вызовы и Promise
-
-Внутри компоненты TodoPage обращаемся к фэйк-API https://jsonplaceholder.typicode.com/ и получаем данные Todos
-
-Материалы по асинхронному взаимодействию и Promise
-
-Статья на Хабр: https://habr.com/ru/companies/ruvds/articles/418085/
-Видеоролик: https://www.youtube.com/watch?v=1idOY3C1gYU&t=1175s
-
-#### Добавили функционал по работе со списками
-
-Ролик, объясняющий, почему нельзя мутировать state: https://yandex.ru/video/preview/7850899982348140117
-Очень хороший видеоролик, который показывает как правильно работать со сложным состоянием: https://www.youtube.com/watch?v=a2DkRBnp4ns
-Видеоролик про оптимизации в react: https://www.youtube.com/watch?v=OtAlPwW8DNU&t=409s
-
-#### Маршрутизация
-
-Добавили маршрутизацию, которая позволяет переключаться между страницами приложения
-
-Документация react-router:  https://reactrouter.com/en/main/start/tutorial (демонстрация нового API)
-Ссылка на видеокурс по маршрутизации: https://www.youtube.com/playlist?list=PLiZoB8JBsdznY1XwBcBhHL9L7S_shPGVE (старый API, но смысл такой же)
-
-#### Подключили контекст
-
-Добавили контекст, с помощью которого возможно прокидывать пропсы от компонент высокого уровня к глубоко вложенным компонентам, избегая сквозной передачи пропсов или props drilling
-
-Документация: https://react.dev/reference/react/createContext
-Видеоурок: https://www.youtube.com/watch?v=W_-TO_reSGs
-
-
-# Порядок выполнения
-
-Данная лабораторная работа базируется на результатах 6-й лабораторной работы, где было реализовано 3 сервиса: `count`, `hello` и `query`. Поскольку данные сервисы достаточно лаконичны (имеют крайне маленький объем кодовой базы), будем их далее называть МИКРОсервисами. 
-
-Для успешного выполнения лабораторной работы необходимо проделать следующие шаги:
-
-1. Ознакомиться с материалами для подготовки перед выполнением лабораторной работы
-2. Сделать форк данного репозитория в GitHub, склонировать получившуюся копию локально, создать от мастера ветку dev и переключиться на неё
-3. Реализовать пользовательский веб-интерфейс для взаимодействия с микросервисами, которые были получены в ходе выполнения предыдущей лабораторной работы. Взаимодействие с Back-End частью веб-приложения должно осуществляться с помощью AJAX-запросов.
-4. Сделать отчёт и поместить его в директорию docs
-5. Зафиксировать изменения, сделать коммит и отправить получившееся состояние ветки дев в личный форк данного репозитория в GitHub
-6. Через интерфейс GitHub создать Pull Request dev --> master
-7. На защите лабораторной работы продемонстрировать работоспособность приложения через браузер
-
-Комопненты приложения должны запускаться на следующих портах
-
-- React-приложение: `80`
-- Микросервис Count: `8081`
-- Микросервис Hello: `8082`
-- Микросервис Query: `8083`
-
-# Содержание отчета
-
-1. Титульный лист
-2. Цель работы
-3. Задание
-4. Ход работы со скриншотами и листингами результатов 
-5. Заключение
-6. Ответы на контрольные вопросы (если они есть)
-7. Список использованных источников
-
-
-# Материалы
-
-Ссылка не презентацию: https://docs.google.com/presentation/d/1_7jB69j8u57FGMtli4f71GeS_TFgcz2mTYM_tImbb-Y/edit#slide=id.p
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
